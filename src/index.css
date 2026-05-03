@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-primary: #10b981; /* Emerald 500 */
+  --color-brand-secondary: #059669; /* Emerald 600 */
+  --color-brand-accent: #34d399; /* Emerald 400 */
+  
+  --color-bg-dark: #0a0a0a;
+  --color-bg-card: #141414;
+  --color-bg-accent: #1e1e1e;
+
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-bg-dark text-gray-100 font-sans;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-bg-dark;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-bg-accent rounded-full hover:bg-brand-primary/50 transition-colors;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply py-20 px-6 md:px-12 lg:px-24;
+  }
+  
+  .glass-card {
+    @apply bg-bg-card border border-white/5 rounded-2xl p-6 hover:border-brand-primary/30 transition-all duration-300;
+  }
+  
+  .btn-primary {
+    @apply bg-brand-primary hover:bg-brand-secondary text-white px-6 py-3 rounded-lg font-medium transition-all transform hover:scale-105 active:scale-95 flex items-center gap-2;
+  }
+
+  .btn-outline {
+    @apply border border-brand-primary/50 hover:border-brand-primary text-brand-primary px-6 py-3 rounded-lg font-medium transition-all transform hover:scale-105 active:scale-95 flex items-center gap-2;
+  }
+}
